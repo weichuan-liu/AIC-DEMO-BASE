@@ -22,7 +22,8 @@
 
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <!-- <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar"> -->
+          <img :src="userLogo+'?imageView2/1/w/40/h/40'" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -36,12 +37,12 @@
               {{ $t('navbar.dashboard') }}
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">
+          <!-- <a target="_blank" href="https://github.com/weichuan-liu/AIC-DEMO-BASE/">
             <el-dropdown-item>
               {{ $t('navbar.github') }}
             </el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
+          </a> -->
+          <a target="_blank" href="https://github.com/weichuan-liu/AIC-DEMO-BASE">
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
@@ -63,6 +64,8 @@ import SizeSelect from '@/components/SizeSelect'
 import LangSelect from '@/components/LangSelect'
 import Search from '@/components/HeaderSearch'
 
+import userLogo from '@/assets/user-logo.jpg'
+
 export default {
   components: {
     Breadcrumb,
@@ -72,6 +75,11 @@ export default {
     SizeSelect,
     LangSelect,
     Search
+  },
+  data() {
+    return {
+      'userLogo': userLogo
+    }
   },
   computed: {
     ...mapGetters([
