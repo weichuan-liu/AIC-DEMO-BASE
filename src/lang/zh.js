@@ -39,6 +39,7 @@ export default {
     Table: '业务决策',
     dynamicTable: '动态 Table',
     dragTable: '拖拽 Table',
+    baseDataForm: '基础数据录入',
     inlineEditTable: 'Table 内编辑',
     complexTable: '综合 Table',
     tab: '业务状况',

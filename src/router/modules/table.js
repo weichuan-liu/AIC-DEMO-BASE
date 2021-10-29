@@ -18,11 +18,17 @@ const tableRouter = {
       name: 'DynamicTable',
       meta: { title: 'dynamicTable' }
     },
+    // {
+    //   path: 'drag-table',
+    //   component: () => import('@/views/table/drag-table'),
+    //   name: 'DragTable',
+    //   meta: { title: 'dragTable' }
+    // },
     {
-      path: 'drag-table',
-      component: () => import('@/views/table/drag-table'),
-      name: 'DragTable',
-      meta: { title: 'dragTable' }
+      path: 'base-data-form',
+      component: () => import('@/views/table/base-data-form'),
+      name: 'baseDataForm',
+      meta: { title: 'baseDataForm' }
     },
     {
       path: 'inline-edit-table',
