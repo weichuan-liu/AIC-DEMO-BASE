@@ -9,7 +9,7 @@
           <div class="card-panel-text">
             累计到店顾客
           </div>
-          <count-to :start-val="0" :end-val="10240" :duration="2600" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="399586" :duration="2600" class="card-panel-num" />
         </div>
       </div>
     </el-col>
@@ -22,7 +22,7 @@
           <div class="card-panel-text">
             累计点单
           </div>
-          <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="125478" :duration="3000" class="card-panel-num" />
         </div>
       </div>
     </el-col>
@@ -35,7 +35,7 @@
           <div class="card-panel-text">
             店面消费
           </div>
-          <count-to :start-val="0" :end-val="219280" :duration="3200" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="46281176.83" :duration="3200" class="card-panel-num" />
         </div>
       </div>
     </el-col>
@@ -48,7 +48,7 @@
           <div class="card-panel-text">
             外卖消费
           </div>
-          <count-to :start-val="0" :end-val="213600" :duration="3600" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="7268394.7" :duration="3600" class="card-panel-num" />
         </div>
       </div>
     </el-col>
