@@ -51,7 +51,7 @@ export default {
     page401: '401',
     page404: '404',
     errorLog: '错误日志',
-    excel: 'Excel 数据管理',
+    excel: 'Excel 数据管理（示例）',
     exportExcel: '导出 Excel',
     selectExcel: '导出 已选择项',
     mergeHeader: '导出 多级表头',

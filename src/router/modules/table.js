@@ -27,7 +27,7 @@ const tableRouter = {
     {
       path: 'base-data-form',
       component: () => import('@/views/table/base-data-form'),
-      name: 'baseDataForm',
+      name: 'BaseDataForm',
       meta: { title: 'baseDataForm' }
     },
     {
