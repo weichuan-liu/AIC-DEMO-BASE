@@ -153,10 +153,10 @@ import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
 const calendarTypeOptions = [
-  { key: 'CN', display_name: 'China' },
-  { key: 'US', display_name: 'USA' },
-  { key: 'JP', display_name: 'Japan' },
-  { key: 'EU', display_name: 'Eurozone' }
+  { key: 'VG', display_name: '鲜蔬菜类' },
+  { key: 'MT', display_name: '腌制肉类' },
+  { key: 'FZ', display_name: '冷冻肉类' },
+  { key: 'TF', display_name: '其他素食' }
 ]
 
 // arr to obj, such as { CN : "China", US : "USA" }
@@ -198,7 +198,7 @@ export default {
       },
       importanceOptions: [1, 2, 3],
       calendarTypeOptions,
-      sortOptions: [{ label: 'ID Ascending', key: '+id' }, { label: 'ID Descending', key: '-id' }],
+      sortOptions: [{ label: '销量递增', key: '+id' }, { label: '销量递增', key: '-id' }],
       statusOptions: ['published', 'draft', 'deleted'],
       showReviewer: false,
       temp: {
