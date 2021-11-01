@@ -1,8 +1,11 @@
 <template>
-  <div class="app-container">
+  <div
+    v-loading="algorithmResultLoading"
+    class="app-container"
+    element-loading-text="计算中"
+  >
     <upload-excel-component :on-success="handleSuccess" :before-upload="beforeUpload" />
     <el-button type="primary" @click="onSubmit">运行分析</el-button>
-    <el-button>取消</el-button>
     <el-tag style="width: 100%;margin-top:20px;" size="medium">部分数据预览</el-tag>
     <el-table :data="tableData" border highlight-current-row style="width: 100%;margin-top:20px;">
       <el-table-column v-for="item of tableHeader" :key="item" :prop="item" :label="item" />
@@ -19,7 +22,8 @@ export default {
   data() {
     return {
       tableData: [],
-      tableHeader: []
+      tableHeader: [],
+      algorithmResultLoading: false
     }
   },
   methods: {
@@ -37,11 +41,14 @@ export default {
       return false
     },
     handleSuccess({ results, header }) {
-      this.tableData = results.slice(0, 20) // only show first 20 rows
+      this.tableData = results.slice(0, 5) // only show first 5 rows
       this.tableHeader = header
     },
     onSubmit() {
-      this.$router.push({ path: '/table/complex-table' })
+      this.algorithmResultLoading = true
+      setTimeout(() => { this.algorithmResultLoading = false }, 5000)
+      setTimeout(() => { this.$router.push({ path: '/table/complex-table' }) }, 5000) // setTimeout is async, this is a trick, callback() should be the formal way
+      // this.$router.push({ path: '/table/complex-table' })
     }
   }
 }
