@@ -12,12 +12,12 @@ const tableRouter = {
     icon: 'table'
   },
   children: [
-    {
-      path: 'dynamic-table',
-      component: () => import('@/views/table/dynamic-table/index'),
-      name: 'DynamicTable',
-      meta: { title: 'dynamicTable' }
-    },
+    // {
+    //   path: 'dynamic-table',
+    //   component: () => import('@/views/table/dynamic-table/index'),
+    //   name: 'DynamicTable',
+    //   meta: { title: 'dynamicTable' }
+    // },
     // {
     //   path: 'drag-table',
     //   component: () => import('@/views/table/drag-table'),
