@@ -6,42 +6,46 @@
       </el-form-item>
       <el-form-item label="店面区域">
         <el-select v-model="form.region" placeholder="请选择区域">
-          <el-option label="朝阳区" value="shanghai" />
-          <el-option label="海淀区" value="beijing" />
+          <el-option label="朝阳区" value="chaoyang" />
+          <el-option label="海淀区" value="haidian" />
+          <el-option label="东城区" value="dongcheng" />
+          <el-option label="西城区" value="xicheng" />
+          <el-option label="丰台区" value="fengtai" />
         </el-select>
       </el-form-item>
-      <el-form-item label="Activity time">
+      <el-form-item label="生效时间">
         <el-col :span="11">
-          <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" style="width: 100%;" />
+          <el-date-picker v-model="form.date1" type="date" placeholder="选择日期" style="width: 100%;" />
         </el-col>
         <el-col class="line" :span="2">-</el-col>
         <el-col :span="11">
-          <el-time-picker v-model="form.date2" placeholder="Pick a time" style="width: 100%;" />
+          <el-time-picker v-model="form.date2" placeholder="选择时间" style="width: 100%;" />
         </el-col>
       </el-form-item>
-      <el-form-item label="Instant delivery">
+      <el-form-item label="是否立刻生效">
         <el-switch v-model="form.delivery" />
       </el-form-item>
-      <el-form-item label="Activity type">
+      <el-form-item label="商圈类型">
         <el-checkbox-group v-model="form.type">
-          <el-checkbox label="Online activities" name="type" />
-          <el-checkbox label="Promotion activities" name="type" />
-          <el-checkbox label="Offline activities" name="type" />
-          <el-checkbox label="Simple brand exposure" name="type" />
+          <el-checkbox label="居民区" name="type" />
+          <el-checkbox label="热门商圈" name="type" />
+          <el-checkbox label="办公通勤区" name="type" />
+          <el-checkbox label="特大景区及特殊店面类型" name="type" />
         </el-checkbox-group>
       </el-form-item>
-      <el-form-item label="Resources">
+      <el-form-item label="门店类型">
         <el-radio-group v-model="form.resource">
-          <el-radio label="Sponsor" />
-          <el-radio label="Venue" />
+          <el-radio label="小店（小于60桌）" />
+          <el-radio label="中店（60桌-75桌）" />
+          <el-radio label="大店（大于75桌）" />
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="Activity form">
+      <el-form-item label="备注">
         <el-input v-model="form.desc" type="textarea" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">Create</el-button>
-        <el-button>Cancel</el-button>
+        <el-button type="primary" @click="onSubmit">创建</el-button>
+        <el-button>取消</el-button>
       </el-form-item>
     </el-form>
   </div>
