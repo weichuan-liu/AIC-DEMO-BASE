@@ -48,7 +48,7 @@
           <div class="card-panel-text">
             外卖消费
           </div>
-          <count-to :start-val="0" :end-val="7268394.7" :duration="3600" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="1571484" :duration="3600" class="card-panel-num" />
         </div>
       </div>
     </el-col>

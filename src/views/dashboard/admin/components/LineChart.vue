@@ -64,7 +64,7 @@ export default {
     setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
         xAxis: {
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+          data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
           boundaryGap: false,
           axisTick: {
             show: false
@@ -72,7 +72,7 @@ export default {
         },
         grid: {
           left: 10,
-          right: 10,
+          right: 20,
           bottom: 20,
           top: 30,
           containLabel: true
