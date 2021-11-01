@@ -5,7 +5,7 @@
         <el-input v-model="form.name" />
       </el-form-item>
       <el-form-item label="店面区域">
-        <el-select v-model="form.region" placeholder="please select your zone">
+        <el-select v-model="form.region" placeholder="请选择区域">
           <el-option label="朝阳区" value="shanghai" />
           <el-option label="海淀区" value="beijing" />
         </el-select>
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log('submit!')
+      this.$router.push({ path: '/table/inline-edit-table' })
     }
   }
 }
