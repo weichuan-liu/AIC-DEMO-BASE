@@ -2,7 +2,7 @@
   <div class="app-container">
     <div class="filter-container">
       <el-input v-model="listQuery.title" :placeholder="$t('table.title')" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter" />
-      <el-select v-model="listQuery.importance" :placeholder="$t('table.importance')" clearable style="width: 90px" class="filter-item">
+      <el-select v-model="listQuery.importance" :placeholder="$t('table.importance')" clearable style="width: 110px" class="filter-item">
         <el-option v-for="item in importanceOptions" :key="item" :label="item" :value="item" />
       </el-select>
       <el-select v-model="listQuery.type" :placeholder="$t('table.type')" clearable class="filter-item" style="width: 130px">
@@ -40,11 +40,6 @@
           <span>{{ row.id }}</span>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('table.date')" width="150px" align="center">
-        <template slot-scope="{row}">
-          <span>{{ row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
-        </template>
-      </el-table-column>
       <el-table-column :label="$t('table.title')" min-width="150px">
         <template slot-scope="{row}">
           <span class="link-type" @click="handleUpdate(row)">{{ row.title }}</span>
@@ -61,7 +56,7 @@
           <span style="color:red;">{{ row.reviewer }}</span>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('table.importance')" width="80px">
+      <el-table-column :label="$t('table.importance')" width="90px">
         <template slot-scope="{row}">
           <svg-icon v-for="n in +row.importance" :key="n" icon-class="star" class="meta-item__icon" />
         </template>
@@ -84,13 +79,13 @@
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
             {{ $t('table.edit') }}
           </el-button>
-          <el-button v-if="row.status!='published'" size="mini" type="success" @click="handleModifyStatus(row,'published')">
+          <el-button v-if="row.status!='有库存'" size="mini" type="success" @click="handleModifyStatus(row,'有库存')">
             {{ $t('table.publish') }}
           </el-button>
-          <el-button v-if="row.status!='draft'" size="mini" @click="handleModifyStatus(row,'draft')">
+          <el-button v-if="row.status!='在途'" size="mini" @click="handleModifyStatus(row,'draft')">
             {{ $t('table.draft') }}
           </el-button>
-          <el-button v-if="row.status!='deleted'" size="mini" type="danger" @click="handleDelete(row,$index)">
+          <el-button v-if="row.status!='无库存'" size="mini" type="danger" @click="handleDelete(row,$index)">
             {{ $t('table.delete') }}
           </el-button>
         </template>
@@ -147,7 +142,9 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
 import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/article'
+import { HDL } from '@/api/hai'
 import waves from '@/directive/waves' // waves directive
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
@@ -198,8 +195,8 @@ export default {
       },
       importanceOptions: [1, 2, 3],
       calendarTypeOptions,
-      sortOptions: [{ label: '销量递增', key: '+id' }, { label: '销量递增', key: '-id' }],
-      statusOptions: ['published', 'draft', 'deleted'],
+      sortOptions: [{ label: '销量递增', key: '+id' }, { label: '销量递减', key: '-id' }],
+      statusOptions: ['有库存', '在途', '无库存'],
       showReviewer: false,
       temp: {
         id: undefined,
@@ -208,7 +205,7 @@ export default {
         timestamp: new Date(),
         title: '',
         type: '',
-        status: 'published'
+        status: '有库存'
       },
       dialogFormVisible: false,
       dialogStatus: '',
@@ -232,7 +229,7 @@ export default {
   methods: {
     getList() {
       this.listLoading = true
-      fetchList(this.listQuery).then(response => {
+      HDL(this.listQuery).then(response => {
         this.list = response.data.items
         this.total = response.data.total
 
