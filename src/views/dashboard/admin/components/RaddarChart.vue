@@ -68,18 +68,18 @@ export default {
             }
           },
           indicator: [
-            { name: 'Sales', max: 10000 },
-            { name: 'Administration', max: 20000 },
-            { name: 'Information Technology', max: 20000 },
-            { name: 'Customer Support', max: 20000 },
-            { name: 'Development', max: 20000 },
-            { name: 'Marketing', max: 20000 }
+            { name: '直配菜', max: 6000 },
+            { name: '锅底', max: 2000 },
+            { name: '肉类', max: 3000 },
+            { name: '自备菜', max: 1000 },
+            { name: '小吃', max: 1000 },
+            { name: '酒水饮料', max: 2000 }
           ]
         },
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Allocated Budget', 'Expected Spending', 'Actual Spending']
+          data: ['历史平均销售', '预计销售', '实际销售']
         },
         series: [{
           type: 'radar',
@@ -95,16 +95,16 @@ export default {
           },
           data: [
             {
-              value: [5000, 7000, 12000, 11000, 15000, 14000],
-              name: 'Allocated Budget'
+              value: [5063, 1677, 2739, 670, 722, 1782],
+              name: '历史平均销售'
             },
             {
-              value: [4000, 9000, 15000, 15000, 13000, 11000],
-              name: 'Expected Spending'
+              value: [4542, 1656, 2347, 678, 656, 1564],
+              name: '预计销售'
             },
             {
-              value: [5500, 11000, 12000, 15000, 12000, 12000],
-              name: 'Actual Spending'
+              value: [3942, 1245, 1978, 1014, 527, 1510],
+              name: '实际销售'
             }
           ],
           animationDuration: animationDuration

@@ -78,21 +78,21 @@ export default {
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [79, 52, 200, 334, 390, 330, 220],
+          data: [3046, 3051, 3201, 3528, 3574, 4592, 3261],
           animationDuration
         }, {
           name: '南京二店',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [80, 52, 200, 334, 390, 330, 220],
+          data: [4137, 3162, 3462, 3638, 3859, 4502, 3864],
           animationDuration
         }, {
           name: '南京三店',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [30, 52, 200, 334, 390, 330, 220],
+          data: [4387, 3684, 3287, 3445, 4215, 3698, 4057],
           animationDuration
         }]
       })
