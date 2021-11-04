@@ -14,30 +14,30 @@
     </div>
 
     <el-table v-loading="listLoading" :data="list" element-loading-text="Loading..." border fit highlight-current-row>
-      <el-table-column align="center" label="Id" width="95">
+      <el-table-column align="center" label="序号" width="95">
         <template slot-scope="scope">
-          {{ scope.$index }}
+          {{ scope.$index + 1 }}
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="菜品名称">
         <template slot-scope="scope">
           {{ scope.row.title }}
         </template>
       </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
+      <el-table-column label="状态" width="110" align="center">
         <template slot-scope="scope">
-          <el-tag>{{ scope.row.author }}</el-tag>
+          <el-tag>{{ scope.row.status }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column label="Readings" width="115" align="center">
+      <el-table-column label="预测销量" width="115" align="center">
         <template slot-scope="scope">
           {{ scope.row.pageviews }}
         </template>
       </el-table-column>
-      <el-table-column align="center" label="Date" width="220">
+      <el-table-column align="center" label="采购数量" width="220">
         <template slot-scope="scope">
           <i class="el-icon-time" />
-          <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{ scope.row.pageviews }}</span>
         </template>
       </el-table-column>
     </el-table>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { fetchList } from '@/api/article'
+import { HDL } from '@/api/hai'
 import { parseTime } from '@/utils'
 // options components
 import FilenameOption from './components/FilenameOption'
@@ -70,7 +70,7 @@ export default {
   methods: {
     fetchData() {
       this.listLoading = true
-      fetchList().then(response => {
+      HDL().then(response => {
         this.list = response.data.items
         this.listLoading = false
       })
