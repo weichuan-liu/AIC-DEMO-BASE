@@ -101,7 +101,7 @@
             <el-option v-for="item in calendarTypeOptions" :key="item.key" :label="item.display_name" :value="item.key" />
           </el-select>
         </el-form-item>
-        <el-form-item :label="$t('table.readings')" prop="pageviews">
+        <el-form-item :label="$t('table.readings')" prop="pageviews" :required="true">
           <el-input v-model="temp.pageviews" />
         </el-form-item>
         <el-form-item :label="$t('table.title')" prop="title">

@@ -33,7 +33,8 @@ for (let i = 0; i < count; i++) {
     display_time: '@datetime',
     comment_disabled: true,
     pageviews: sales_amt[i] + Math.floor(sales_std[i] * (Math.random() * 2 - 1)), // generate rand number
-    platforms: ['a-platform']
+    platforms: ['a-platform'],
+    sales_now: Math.floor(Math.random() * sales_amt[i])
   }))
 }
 

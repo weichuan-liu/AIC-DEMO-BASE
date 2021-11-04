@@ -21,12 +21,12 @@ export default {
   data() {
     return {
       tabMapOptions: [
-        { label: 'China', key: 'CN' },
-        { label: 'USA', key: 'US' },
-        { label: 'Japan', key: 'JP' },
-        { label: 'Eurozone', key: 'EU' }
+        { label: '鲜蔬菜类', key: 'VG' },
+        { label: '腌制肉类', key: 'MT' },
+        { label: '冷冻肉类', key: 'FZ' },
+        { label: '其他素食', key: 'TF' }
       ],
-      activeName: 'CN',
+      activeName: 'VG',
       createdTimes: 0
     }
   },

@@ -12,38 +12,38 @@
       </template>
     </el-table-column>
 
-    <el-table-column width="180px" align="center" label="Date">
+    <el-table-column width="180px" align="center" label="今日销量">
       <template slot-scope="scope">
-        <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+        <span>{{ scope.row.sales_now }}</span>
       </template>
     </el-table-column>
 
-    <el-table-column min-width="300px" label="Title">
+    <el-table-column min-width="300px" label="菜品名称">
       <template slot-scope="{row}">
         <span>{{ row.title }}</span>
         <el-tag>{{ row.type }}</el-tag>
       </template>
     </el-table-column>
 
-    <el-table-column width="110px" align="center" label="Author">
+    <el-table-column width="110px" align="center" label="销量标准差">
       <template slot-scope="scope">
         <span>{{ scope.row.author }}</span>
       </template>
     </el-table-column>
 
-    <el-table-column width="120px" label="Importance">
+    <el-table-column width="120px" label="库存类型">
       <template slot-scope="scope">
         <svg-icon v-for="n in +scope.row.importance" :key="n" icon-class="star" />
       </template>
     </el-table-column>
 
-    <el-table-column align="center" label="Readings" width="95">
+    <el-table-column align="center" label="平均销量" width="95">
       <template slot-scope="scope">
         <span>{{ scope.row.pageviews }}</span>
       </template>
     </el-table-column>
 
-    <el-table-column class-name="status-col" label="Status" width="110">
+    <el-table-column class-name="status-col" label="状态" width="110">
       <template slot-scope="{row}">
         <el-tag :type="row.status | statusFilter">
           {{ row.status }}
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { fetchList } from '@/api/article'
+import { HDL } from '@/api/hai'
 
 export default {
   filters: {
@@ -92,7 +92,7 @@ export default {
     getList() {
       this.loading = true
       this.$emit('create') // for test
-      fetchList(this.listQuery).then(response => {
+      HDL(this.listQuery).then(response => {
         this.list = response.data.items
         this.loading = false
       })
